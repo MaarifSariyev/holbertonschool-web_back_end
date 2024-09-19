@@ -8,7 +8,3 @@ export default function createReportObject(employeesList) {
     },
   };
 }
-const employees = {
-    ...createEmployeesObject('engineering', ['Bob', 'Jane']),
-    ...createEmployeesObject('marketing', ['Sylvie'])
-}; 
