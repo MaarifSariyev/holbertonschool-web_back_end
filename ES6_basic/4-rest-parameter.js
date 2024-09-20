@@ -1,3 +1,4 @@
 export default function returnHowManyArguments(...args) {
-  return args.length;
-};
+    // Return the count of arguments passed to the function
+    return args.length;
+}
