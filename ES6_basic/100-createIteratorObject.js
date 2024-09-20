@@ -3,6 +3,6 @@ export default function createIteratorObject(report) {
   const employeeList = [];
   for (const department in employees) {
     employeeList.push(...employees[department]);
-  }
+  };
   return employeeList[Symbol.iterator]();
 }
