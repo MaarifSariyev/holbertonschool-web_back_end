@@ -9,7 +9,8 @@ function handleProfileSignup(firstName, lastName, fileName) {
     .then((results) => {
       return results.map((result) => ({
         status: result.status,
-        value: result.status === 'fulfilled' ? result.value : result.reason.message
+        value: result.status === 'fulfilled' ? result.value : result.reason.message, // Ensure no syntax error here
+      }));
     });
 }
 
