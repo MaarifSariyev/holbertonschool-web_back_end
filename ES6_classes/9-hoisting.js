@@ -1,15 +1,14 @@
-// 9-hoisting.js
 export class HolbertonClass {
-  constructor(year, location) {
-    this.year = year;
-    this.location = location;
+  constructor(size, location) {
+    this._size = size;
+    this._location = location;
   }
 
-  get year() {
-    return this._year;
+  valueOf() {
+    return this._size;
   }
 
-  get location() {
+  toString() {
     return this._location;
   }
 }
@@ -18,10 +17,10 @@ const class2019 = new HolbertonClass(2019, 'San Francisco');
 const class2020 = new HolbertonClass(2020, 'San Francisco');
 
 export class StudentHolberton {
-  constructor(firstName, lastName, HolbertonClass) {
+  constructor(firstName, lastName, holbertonClass) {
     this._firstName = firstName;
     this._lastName = lastName;
-    this._holbertonClass = HolbertonClass; // Fixed this line
+    this._holbertonClass = holbertonClass; // Fixed this line
   }
 
   get fullName() {
