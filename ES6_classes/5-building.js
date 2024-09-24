@@ -3,10 +3,6 @@ export default class Building {
     this.sqft = sqft; // Calls the setter to validate and set the value
   }
 
-  // Getter for sqft
-  get sqft() {
-    return this._sqft;
-  }
 
   // Setter for sqft
   set sqft(value) {
@@ -18,6 +14,6 @@ export default class Building {
 
   // Abstract method
   evacuationWarningMessage() {
-    throw new Error("Class extending Building must override evacuationWarningMessage");
+   return throw new Error("Class extending Building must override evacuationWarningMessage");
   }
 }
