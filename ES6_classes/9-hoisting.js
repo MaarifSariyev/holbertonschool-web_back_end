@@ -1,4 +1,3 @@
-
 export class HolbertonClass {
   constructor(year, location) {
     this._year = year;
@@ -21,7 +20,7 @@ export class StudentHolberton {
   constructor(firstName, lastName, holbertonClass) {
     this._firstName = firstName;
     this._lastName = lastName;
-    this._holbertonClass = holbertonClass;
+    this._holbertonClass = holbertonClass; // Corrected to use the parameter
   }
 
   get fullName() {
@@ -29,14 +28,7 @@ export class StudentHolberton {
   }
 
   get holbertonClass() {
-    return this.holbertonClass;
-  }
-  
-  set holbertonClass(value) {
-    if (!(value instanceof HolbertonClass)) {
-      throw new TypeError('holbertonClass must be an instance of HolbertonClass class');
-    }
-    this._holbertonClass = value;
+    return this._holbertonClass; // Corrected to return the instance variable
   }
 
   get fullStudentDescription() {
@@ -44,10 +36,12 @@ export class StudentHolberton {
   }
 }
 
+// Creating instances of students
 const student1 = new StudentHolberton('Guillaume', 'Salva', class2020);
 const student2 = new StudentHolberton('John', 'Doe', class2020);
 const student3 = new StudentHolberton('Albert', 'Clinton', class2019);
 const student4 = new StudentHolberton('Donald', 'Bush', class2019);
 const student5 = new StudentHolberton('Jason', 'Sandler', class2019);
 
+// Exporting the list of students
 export const listOfStudents = [student1, student2, student3, student4, student5];
