@@ -1,13 +1,9 @@
 export default class Building {
   constructor(sqft) {
-    this.sqft = sqft; // Calls the setter to validate and set the value
-    Building.validateInstantiation();
-  }
-
-  static validateInstantiation() {
-    if (this === Building) {
+    if (new.target === Building) {
       throw new Error("Cannot instantiate abstract class Building");
     }
+    this.sqft = sqft; // Calls the setter to validate and set the value
   }
 
   // Getter for sqft
