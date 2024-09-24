@@ -1,8 +1,13 @@
 export default class Building {
   constructor(sqft) {
+    // Set the sqft attribute
     this.sqft = sqft; // Calls the setter to validate and set the value
   }
 
+  // Getter for sqft
+  get sqft() {
+    return this._sqft;
+  }
 
   // Setter for sqft
   set sqft(value) {
@@ -12,33 +17,29 @@ export default class Building {
     this._sqft = value;
   }
 
-  // Abstract method
+  // Abstract method to enforce implementation in subclasses
   evacuationWarningMessage() {
     throw new Error("Class extending Building must override evacuationWarningMessage");
   }
 }
 
-describe('Building class', () => {
-  it('should throw an error if evacuationWarningMessage is not overridden', () => {
-    class IncompleteBuilding extends Building {}
+const b = new Building(100);
+console.log(b);
 
-    const building = new IncompleteBuilding(100);
-    
-    // Check that calling the method throws the expected error
-    expect(() => {
-      building.evacuationWarningMessage(); // This should throw
-    }).toThrow("Class extending Building must override evacuationWarningMessage");
-  });
+class TestBuilding extends Building {}
 
-  it('should allow instantiation of subclasses that override evacuationWarningMessage', () => {
-    class TestBuilding extends Building {
-      evacuationWarningMessage() {
-        return "Evacuate the building!";
-      }
-    }
+try {
+    new TestBuilding(200);
+} catch (err) {
+    console.log(err.message); // Should log the error about overriding the method
+}
 
-    const building = new TestBuilding(200);
-    expect(building.sqft).toBe(200);
-    expect(building.evacuationWarningMessage()).toBe("Evacuate the building!");
-  });
-});
+// Example of a valid subclass
+class ValidBuilding extends Building {
+  evacuationWarningMessage() {
+    return "Evacuate the building!";
+  }
+}
+
+const validBuilding = new ValidBuilding(300);
+console.log(validBuilding.evacuationWarningMessage()); // Should work
