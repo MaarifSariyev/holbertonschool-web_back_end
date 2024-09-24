@@ -1,8 +1,5 @@
 export default class Building {
   constructor(sqft) {
-    if (new.target === Building) {
-      throw new Error("Cannot instantiate abstract class Building");
-    }
     this.sqft = sqft; // Calls the setter to validate and set the value
   }
 
