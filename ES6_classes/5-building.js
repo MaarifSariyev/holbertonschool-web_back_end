@@ -2,7 +2,7 @@ export default class Building {
   constructor(sqft) {
     this._sqft = sqft;
     if (Object.getOwnPropertyNames(this.constructor.prototype).includes('evacuationWarningMessage') === false) {
-      throw new Error("Class extending Building must override evacuationWarningMessage");
+      throw new Error('Class extending Building must override evacuationWarningMessage');
     }
   }
 
@@ -11,6 +11,6 @@ export default class Building {
   }
 
   evacuationWarningMessage() {
-    throw new Error("Class extending Building must override evacuationWarningMessage");
+    // throw new Error('Class extending Building must override evacuationWarningMessage');
   }
 }
