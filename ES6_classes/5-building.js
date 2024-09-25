@@ -5,7 +5,7 @@ export default class Building {
     
     // Check if the evacuationWarningMessage method is overridden
     if (this.evacuationWarningMessage === Building.prototype.evacuationWarningMessage) {
-      throw new Error('Class extending Building must override evacuationWarningMessage');
+      return 'Class extending Building must override evacuationWarningMessage';
     }
   }
 
