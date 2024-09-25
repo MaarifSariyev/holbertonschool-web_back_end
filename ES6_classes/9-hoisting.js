@@ -78,3 +78,6 @@ const student5 = new StudentHolberton('Jason', 'Sandler', class2019);
 
 
 export const listOfStudents = [student1, student2, student3, student4, student5];
+
+
+console.log('listOfStudents:', listOfStudents); // Add this line
