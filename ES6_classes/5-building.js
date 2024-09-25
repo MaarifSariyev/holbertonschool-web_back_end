@@ -1,7 +1,8 @@
 // 5-building.js
 export default class Building {
   constructor(sqft) {
-    if (this.constructor === Building) {
+    // Prevent direct instantiation of Building
+    if (new.target === Building) {
       throw new Error('Cannot instantiate abstract class Building');
     }
     this._sqft = sqft;
