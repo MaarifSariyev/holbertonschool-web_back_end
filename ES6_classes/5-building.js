@@ -1,11 +1,12 @@
 // 5-building.js
 export default class Building {
   constructor(sqft) {
-    // Prevent direct instantiation of Building
-    if (new.target === Building) {
-      throw new Error('Cannot instantiate abstract class Building');
-    }
     this._sqft = sqft;
+    
+    // Check if the evacuationWarningMessage method is overridden
+    if (this.evacuationWarningMessage === Building.prototype.evacuationWarningMessage) {
+      throw new Error('Class extending Building must override evacuationWarningMessage');
+    }
   }
 
   get sqft() {
