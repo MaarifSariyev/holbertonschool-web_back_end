@@ -4,13 +4,13 @@ class HolbertonClass {
     this._location = location;
   }
 
-  get year() {
-    return `${this._year}`;
-  }
+  // get year(){
+  //   return `${this._year}`
+  // }
 
-  get location() {
-    return `${this._location}`;
-  }
+  // get location(){
+  //   return `${this._location}`
+  // }
 }
 
 class StudentHolberton {
@@ -19,10 +19,9 @@ class StudentHolberton {
     this._lastName = lastName;
     this._holbertonClass = holbertonClass;
   }
-
-  get fullStudentDescription() {
-    return `${this._firstName} ${this._lastName} - ${this._holbertonClass.year} - ${this._holbertonClass.location}`;
-  }
+  //  get fullStudentDescription() {
+  //   return `${this._firstName} ${this._lastName} - ${this._holbertonClass.year} - ${this._holbertonClass.location}`;
+  // }
 }
 
 const class2019 = new HolbertonClass(2019, 'San Francisco');
@@ -34,12 +33,13 @@ const student3 = new StudentHolberton('Albert', 'Clinton', class2019);
 const student4 = new StudentHolberton('Donald', 'Bush', class2019);
 const student5 = new StudentHolberton('Jason', 'Sandler', class2019);
 
+
 export const listOfStudents = [student1, student2, student3, student4, student5];
 
-console.log(listOfStudents);  // This will not show fullStudentDescription unless accessed
+console.log(listOfStudents);
 
 const listPrinted = listOfStudents.map(
-  student => student.fullStudentDescription  // Accessing explicitly here
+    student => student.fullStudentDescription
 );
 
-console.log(listPrinted);
+console.log(listPrinted)
