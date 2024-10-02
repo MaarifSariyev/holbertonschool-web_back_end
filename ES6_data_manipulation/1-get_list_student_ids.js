@@ -8,6 +8,3 @@ const getListStudentIds = (students) => {
 };
 
 export default getListStudentIds;
-
-console.log(getListStudentIds('hello'));
-console.log(getListStudentIds(getListStudents()));
