@@ -1,5 +1,3 @@
-import getListStudents from './0-get_list_students';
-
 const getListStudentIds = (students) => {
   if (!Array.isArray(students)) {
     return [];
