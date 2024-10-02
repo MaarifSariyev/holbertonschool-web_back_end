@@ -1,4 +1,9 @@
-const getStudentsByLocation = (students, city){
-  return students.filter((students)=> students.location === city);
-}
+const getStudentsByLocation = (students, city) => {
+  if (!Array.isArray(students) || typeof city !== 'string') {
+    return [];
+  }
+  
+  return students.filter(student => student.location === city);
+};
+
 export default getStudentsByLocation;
